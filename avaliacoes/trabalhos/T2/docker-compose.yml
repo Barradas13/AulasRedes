@@ -1,0 +1,35 @@
+services:
+  banco_dados:
+    image: mysql
+    container_name: banco_dados
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+    ports:
+      - 33306:3306
+    volumes:
+    - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - rede_chat
+  redis:
+    image: redis:alpine 
+    container_name: redis
+    networks:
+      - rede_chat 
+    ports:
+      - "6379:6379"
+  chat:
+    image: barradas13/chat
+    ports:
+      - 8550:8550
+    stdin_open: true
+    tty: true
+    env_file: .env 
+    depends_on:
+      - banco_dados
+      - redis
+    networks:
+      - rede_chat
+
+networks:
+  rede_chat:

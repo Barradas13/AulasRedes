@@ -1,0 +1,28 @@
+services:
+  #counter:
+    #image: darlon/counter
+  #contador:
+    #build: .
+    #environment:
+      #- COUNTER_N=20
+  #banco_dados:
+    #image: mysql
+    #environment:
+      #- MYSQL_ROOT_PASSWORD=aluno
+      #- MYSQL_USER=aluno
+      #- MYSQL_PASSWORD=aluno
+    #ports:
+      #- 33063:3306
+
+  #CI/CD:
+    contador: 
+      image: saraaleixo/contador
+      container_name: contador
+    watchtower:
+      image: containrrr/watchtower
+      container_name: watchtower
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+      environment:
+        - WATCHTOWER_POLL_INTERVAL=15
+      command: contador

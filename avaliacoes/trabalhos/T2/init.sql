@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS ConexaoChat;
+
+USE ConexaoChat;
+
+CREATE TABLE IF NOT EXISTS mensagens (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255),
+    texto TEXT
+);

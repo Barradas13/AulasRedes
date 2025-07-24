@@ -1,0 +1,19 @@
+{
+  "name": "Lua Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "sumneko.lua",
+        "formulahendry.code-runner"
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}
+
