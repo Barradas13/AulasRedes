@@ -177,4 +177,4 @@ Dev Containers -> ambientes de desenvolvimento para não precisar ficar instalan
 
 ## Trabalho Livre 2° Bimestre
 
-Dentro da pasta avaliações/trabalho/T2 há um chat de comunicação em computadores da rede local as instruções de como usar estão disponíveis no readme dentro do trabalho.
+Dentro da pasta avaliações/trabalho/T2 há um chat de comunicação em computadores da rede local as instruções de como usar estão disponíveis no readme dentro do trabalho. Além disso, dentro de Q2 na mesma pasta há uma explicação básica da utilização do redis, um banco de dados em memória cache.
