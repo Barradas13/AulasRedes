@@ -174,3 +174,7 @@ Iniciamos um servidor com apache e colocamos ele com o docker, o trabalho está 
 ## Aula 08/07/2025
 
 Dev Containers -> ambientes de desenvolvimento para não precisar ficar instalando as dependências..
+
+## Trabalho Livre 2° Bimestre
+
+Dentro da pasta avaliações/trabalho/T2 há um chat de comunicação em computadores da rede local as instruções de como usar estão disponíveis no readme dentro do trabalho.
