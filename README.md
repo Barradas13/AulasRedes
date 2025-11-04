@@ -260,6 +260,36 @@ Because it provides services directly to user applications, translating domain n
 | Physical    | Transmission of bits                 | Bits      |
 ---
 
+# Network Layer Class
+
+We use IP addresses to address a network and a machine. For this address, 32 bits are reserved, which are divided into 4 groups of 8 bits, resulting in something like:
+
+| 1 1 1 1 1 1 1 1 | 1 1 1 1 1 1 1 1 | 1 1 1 1 1 1 1 1 | 1 1 1 1 1 1 1 1 |
+
+| 255 | 255 | 255 | 255 |
+
+There are 3 standard classes, which are A, B, and C, and they respectively allocate 8, 16, and 24 bits reserved for the network, with the rest for the hosts. That is, class C offers only 8 bits for the host portion, limiting it to 2⁸ = 255 hosts. However, the addresses require one address for the network (in which all bits after the first x bits, according to the class, are 0) and one address for the broadcast (in which all bits are 1 and it sends to all hosts).
+
+Note that there is a very large difference between the number of hosts offered by class B and class C. For example, class B offers 2¹⁶ - 2 hosts = 65,533, while class C offers only 253 hosts. Therefore, the following were created:
+
+## CIDR (CLASSLESS INTER DOMAIN ROUTING)
+
+Classless IPs, which are defined through masks and allow a better distribution between the number of networks and hosts. Note:
+
+ADDRESS / BITS RESERVED FOR NETWORK
+
+192.168.248.0 / 26 -> there are 26 bits for the network and 6 for hosts, which equals 2⁶ - 2 hosts
+
+### Network addresses
+
+They are defined as follows: the bits reserved for the network remain as they are, and the rest are filled with 0s.
+
+### Broadcast addresses
+
+They are defined as follows: the bits reserved for the network remain as they are, and the rest are filled with 1s.
+
+From this content, exercises were practiced and are available in aulas/exercicios/CIDR.md
+
 
 # Versão em Português
 
@@ -528,3 +558,32 @@ Porque fornece serviços diretos às aplicações (tradução de nomes de domín
 | Física     | Transmissão de bits                      | Bits             |
 
 ---
+
+
+# Aula Camada de Redes
+
+Utilizamos os endereços IPs para endereçar uma rede e uma máquina. Para esse endereço são reservados 32 bits os quais são divididos em 4 grupamentos de 8 bits tendo algo parecido com:
+
+| 1 1 1 1 1 1 1 1 | 1 1 1 1 1 1 1 1 |1 1 1 1 1 1 1 1 | 1 1 1 1 1 1 1 |
+
+| 255 | 255 | 255 | 255 |
+
+Existem 3 classes padrões as quais são A, B e C as quais respectivamente ofertam 8, 16 e 24 bits reservados para a rede e o resto para máquinas, ou seja, a classe C oferece apenas 8 bits para máquina limitando a apenas 2⁸=255 máquinas. Porém os endereços precisam de um endereço para a rede (o qual todos os bits são 0 após os x primeiros de acordo com a classe) e um endereço para o broadcast (o qual todos os bits são 1 e envia para todas as máquinas).
+
+Note que há uma diferença muito grande entre a quantidade de máquinas da classe B e da classe C, por exemplo a B oferta 2¹⁶ - 2 máquinas = 65533, mas a classe C oferta apenas 253 máquinas. Logo foi criado os:
+
+## CIDR (CLASSLESS INTER DOMAIN ROUTING)
+
+Os IPs sem classe, que são definidos a partir de máscaras e permitem uma distribuição melhor entre quantidade de rede e máquinas, note:
+
+ENDERECO / BITS RESERVADOS PARA REDE
+
+192.168.248.0 / 26 -> há 26 bits para as redes e 6 para máquinas o que valem a 2⁶ - 2 máquinas
+
+### Endereços de rede
+São definidos de acordo com: os bits reservados para rede são normais e o resto preenchido por 0
+
+### Endereços de broadcast
+São definidos de acordo com: os bits reservados para rede são normais e o resto é preenchido por 1
+
+Desse conteúdo foram praticados exercícios que estão em aulas/exercicios/CIDR.md
