@@ -291,6 +291,26 @@ They are defined as follows: the bits reserved for the network remain as they ar
 From this content, exercises were practiced and are available in aulas/exercicios/CIDR.md
 
 
+## DHCP (Dynamic Host Configuration Protocol)
+
+* 1 - The DHCP client connects to the network and sends a *Discover* message to the server (it sends a broadcast because it doesn’t yet know who the server is).
+* 2 - The server responds with an *Offer* message to the client, proposing an available IP address.
+* 3 - The client sends a *Request* message confirming its choice.
+* 4 - The server sends an *Acknowledgement* (*ACK*) to finalize the assignment.
+
+It also provides the default gateway, which is the router’s address — that is, the device responsible for communicating outside the local network.
+
+---
+
+## NAT (Network Address Translation)
+
+> Note: NAT is not a protocol, but rather a function performed by the router.
+
+There is an issue with the number of available IP addresses — they are limited to around 6 billion, yet there are tens of billions of devices that connect to the Internet every day.
+Therefore, NAT was created. It keeps track of the **Source Address**, **Source Port**, **Destination Address**, and **Destination Port**.
+Through this, a computer with a local IP address (e.g., 192.168.250.160) can communicate outside its own network, with the router handling the translation between private and public addresses.
+
+
 # Versão em Português
 
 Aqui apresento os conteúdos e resumos das aulas de redes que tive em 2025 com o professor Darlon no IFPR.
@@ -587,3 +607,18 @@ São definidos de acordo com: os bits reservados para rede são normais e o rest
 São definidos de acordo com: os bits reservados para rede são normais e o resto é preenchido por 1
 
 Desse conteúdo foram praticados exercícios que estão em aulas/exercicios/CIDR.md
+
+## DHCP (DINAMIC HOST CONTROL PROTOCOL)
+
+ - 1 - Cliente DHCP se conecta à rede e manda um Discover para o servidor (manda broadcast pois ainda não sabe quem é o servidor).
+ - 2 - O servidor responde uma solicitação apenas para o cliente com um IP possível
+ - 3 - O cliente envia um request confirmando
+ - 4 - O servidor faz um "acknowledgement"
+
+Informa o gateway padrão que é o endereço do roteador, ou seja, aquele que tem a função de conversar fora da rede.
+
+## NAT (Network Address Translation)
+
+Note: NAT não é um protocolo mas sim parte do roteador
+
+ Há um erro nas quantidades de endereços ips, correto? Eles são limitados a apenas 6 bilhões, mas existem dezenas de bilhoes de dispositivos que se conectam na internte todos os dias. Portanto foi criado o NAT que salva o END Origem, A Porta Origem, O End Destino e a Porta Destino, através disso um computador com IP local (192.168.250.160, v.g.) e então auxilia o roteador na comunicação fora da rede dele próprio.
