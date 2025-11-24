@@ -260,6 +260,40 @@ Because it provides services directly to user applications, translating domain n
 | Physical    | Transmission of bits                 | Bits      |
 ---
 
+# 4th Term
+
+# Transport Layer Class
+
+Divides the packets and sends them to the network layer.
+
+The main protocols are:
+
+* TCP
+* UDP
+
+## TCP (Transmission Control Protocol)
+
+Characteristics:
+
+* Connection-oriented
+* Full-duplex
+* Reliable and slow
+
+Its operation works in 3 phases: Establishes connection, transmits message, closes connection.
+
+It is full-duplex, that is, in the same connection it can send and receive data.
+
+## UDP (User Datagram Protocol)
+
+Characteristics:
+
+* Not connection-oriented
+* Multiplexing/demultiplexing
+* Not reliable and fast
+
+Multiplexing is the process of combining multiple data streams into a single channel for efficient transmission, while demultiplexing is the inverse process that separates the combined stream back into its individual channels at the destination.
+
+
 # Network Layer Class
 
 We use IP addresses to address a network and a machine. For this address, 32 bits are reserved, which are divided into 4 groups of 8 bits, resulting in something like:
