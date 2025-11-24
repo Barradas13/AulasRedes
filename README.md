@@ -579,6 +579,37 @@ Porque fornece serviços diretos às aplicações (tradução de nomes de domín
 
 ---
 
+# 4° Bimestre
+
+# Aula Camada de Transporte
+
+Divide os pacotes e envia para a camada de redes
+
+Principais protocolos são:
+
+ - TCP
+ - UDP
+
+## TCP (Transmission Control Protocol)
+
+Características:
+
+ - Orientado a conexão
+ - Full-duplex
+ - Confiável e lento
+
+Seu funcionamento opera em 3 fases: Estabelece conexão, transmite mensagem, fecha conexão.
+
+É Full-duplex, isso é, em uma mesma conexão pode enviar e receber dados
+
+## UDP (User Datagram Protocol)
+
+Características:
+ - Não orientado a conexão
+ - multiplexação/demultiplexação
+ - Não confiável e rápido
+
+Multiplexação é o processo de combinar múltiplos fluxos de dados em um único canal para transmissão eficiente, enquanto a demultiplexação é o processo inverso que separa o fluxo combinado de volta em seus canais individuais no destino
 
 # Aula Camada de Redes
 
