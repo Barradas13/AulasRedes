@@ -14,7 +14,7 @@ def fazTudoBitUm(b):
 
 def transformaIpDecimal(ip):
     partes = ip.split('.')
-    decimal = ""
+    decimal = "0b"
     
 
     for i in range(4):
@@ -27,40 +27,40 @@ def transformaIpDecimal(ip):
     for i in partes:
         decimal += i[2:]
 
+    print(len(decimal))
+
     return int(decimal, 2)
 
+def padronizaDecimalIP(ip):
+    ip_binario = bin(ip)[2:]
+    ip_saida = ""
+
+    if len(ip_binario) < 32:
+        ip_binario = '0' * (32 - len(ip_binario)) + ip_binario
+
+    for i in range(0, 32, 8):
+        ip_saida += str(int(ip_binario[i:i+8], 2)) + "."
+
+    return ip_saida[:-1]
 
 def verificaRede(ip, mascara):
     rede = bin(int(ip & mascara))[2:]
-    rede_saida = ""
+    rede_saida = padronizaDecimalIP(int(rede, 2))
 
-    for i in range(0, 32, 8):
-        rede_saida += str(int(rede[i:i+8], 2)) + "."
+    inicio = transformaIpDecimal(rede_saida) + 1
+    inicio_saida = padronizaDecimalIP(inicio)
 
-    inicio = int(rede, 2) + 1
-    inicio_saida = ""
-
-    for i in range(0, 32, 8):
-        inicio_saida += str(int(bin(inicio)[2:][i:i+8], 2)) + "."
-
-
-    return rede_saida[:-1], inicio_saida[:-1]
+    return rede_saida, inicio_saida
 
 def verificaBroadcast(ip, imasc):
     
     broadcast = bin(int(ip | imasc))[2:]
-    broadcast_saida = ""
-
-    for i in range(0, 32, 8):
-        broadcast_saida += str(int(broadcast[i:i+8], 2)) + "."
+    broadcast_saida = padronizaDecimalIP(int(broadcast, 2))
     
-    fim = int(broadcast, 2) - 1
-    fim_saida = ""
+    fim = transformaIpDecimal(broadcast_saida) - 1
+    fim_saida = padronizaDecimalIP(fim)
 
-    for i in range(0, 32, 8):
-        fim_saida += str(int(bin(fim)[2:][i:i+8], 2)) + "."
-
-    return broadcast_saida[:-1], fim_saida[:-1]
+    return broadcast_saida[:-1], fim_saida
 
 
 ip, mascara = input().split('/')
