@@ -27,8 +27,6 @@ def transformaIpDecimal(ip):
     for i in partes:
         decimal += i[2:]
 
-    print(len(decimal))
-
     return int(decimal, 2)
 
 def padronizaDecimalIP(ip):
@@ -60,13 +58,17 @@ def verificaBroadcast(ip, imasc):
     fim = transformaIpDecimal(broadcast_saida) - 1
     fim_saida = padronizaDecimalIP(fim)
 
-    return broadcast_saida[:-1], fim_saida
+    return broadcast_saida, fim_saida
 
 
 ip, mascara = input().split('/')
 
+while mascara < '0' or mascara > '32':
+    ip, mascara = input("Mascara invalida. Digite novamente o ip e mascara: ")
+
 dec_ip = transformaIpDecimal(ip)
 dec_mascara = fazTudoBitUm(int(mascara))
+
 
 mascara_invertida = int("0b" + "1" * 32, 2)
 mascara_invertida ^= dec_mascara
